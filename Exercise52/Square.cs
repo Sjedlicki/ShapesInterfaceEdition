@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Exercise52
 {
-    public class Square : IShape
+    public class Square : IShape, ISquare
     {
         public int Length { get; set; }
 

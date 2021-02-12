@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Exercise52
 {
-    public class Circle : IShape
+    public class Circle : IShape, ICircle
     {
         public int Radius { get; set; }
 
@@ -12,6 +12,7 @@ namespace Exercise52
         {
 
         }
+
         public Circle(int radius)
         {
             Radius = radius;

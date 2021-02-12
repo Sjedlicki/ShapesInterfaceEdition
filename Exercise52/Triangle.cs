@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Exercise52
 {
-    public class Triangle : IShape
+    public class Triangle : IShape, ITriangle
     {
         public int Side1 { get; set; }
         public int Side2 { get; set; }
