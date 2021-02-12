@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Exercise52
+namespace ShapesInterfaceEdition
 {
     public class Triangle : IShape, ITriangle
     {

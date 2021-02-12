@@ -1,21 +1,16 @@
 ﻿using System;
 using System.Linq;
 
-namespace Exercise52
+namespace ShapesInterfaceEdition
 {
-    class Program
+    public static class ShapeService
     {
-        static void Main(string[] args)
-        {
-            SaveShape(new ShapeRepository());
-        }
-
         private static void Menu()
         {
             Console.Write($"Enter a new shape.  Square (1), Triangle (2), Circle(3), Quit(q): ");
         }
 
-        private static void SaveShape(IShapeRepository repository)
+        public static void SaveShape(IShapeRepository repository)
         {
             bool tryAgain;
             do
@@ -50,8 +45,14 @@ namespace Exercise52
         {
             var shapes = repository.GetAll();
 
-            var averageArea = Math.Round(shapes.Select(x => x.Area()).Average(), 2);
-            var averagePerimeter = Math.Round(shapes.Select(x => x.Perimeter()).Average(), 2);
+            var averageArea = 0.0;
+            var averagePerimeter = 0.0;
+
+            if (shapes.Count > 0)
+            {
+                averageArea = Math.Round(shapes.Select(x => x.Area()).Average(), 2);
+                averagePerimeter = Math.Round(shapes.Select(x => x.Perimeter()).Average(), 2);
+            }
 
             Console.WriteLine($"Average Area: {averageArea}");
             Console.WriteLine($"Average Perimeter: {averagePerimeter}");
